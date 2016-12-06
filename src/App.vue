@@ -2,9 +2,11 @@
   <div id="app">
     <div class="carousel">
       <button class="arrow"> &lt; </button>
-      <card v-for="card in cards"
-            v-bind:original="card.word"
-            v-bind:key="card.id"></card>
+      <section class="cards">
+        <card v-for="card in cards"
+              v-bind:original="card.word"
+              v-bind:key="card.id"></card>
+      </section>
       <button class="arrow"> &gt; </button>
     </div>
   </div>
@@ -19,8 +21,17 @@
 }
 
 .carousel {
+  width: 600px;
   display: flex;
   align-items: center;
+}
+
+.cards{
+  display: flex;
+  width: 400px;
+  padding: 0;
+  margin: auto;
+  overflow: hidden;
 }
 
 .arrow {
@@ -33,9 +44,5 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-}
-
-.itemsList {
-  display: flex;
 }
 </style>
