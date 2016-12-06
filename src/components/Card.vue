@@ -9,7 +9,7 @@
                autofocus>
         <button @click="checkTranslation" type="button">OK</button>
       </form>
-      <span v-text="status"></span>
+      <span class="answer" v-text="answer"></span>
     </div>
   </section>
 </template>
@@ -34,5 +34,10 @@
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
+}
+
+.answer{
+  font-style: italic;
+  text-transform: lowercase;
 }
 </style>

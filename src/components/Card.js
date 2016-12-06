@@ -2,11 +2,11 @@
 /* eslint-disable no-console */
 
 export default {
+  props: ['original'],
   data() {
     return {
-      original: '',
       translation: '',
-      status: '',
+      answer: '',
       resultClass: '',
     };
   },
@@ -27,24 +27,23 @@ export default {
     checkTranslation() {
       const self = this;
       const word = this.translation;
-      this.status = 'Checking...';
+      this.answer = 'Checking...';
 
       this.getData().then(data =>
         data.tuc.some((item) => {
           if (item.phrase) {
-            debugger;
             return word === item.phrase.text;
           }
         }))
         .then((result) => {
           if (result) {
             self.resultClass = 'green';
-            self.status = 'Correct';
           } else {
             self.resultClass = 'red';
-            self.status = 'Incorrect';
           }
+          this.answer = word;
         });
+
 
       this.translation = '';
     },

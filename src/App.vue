@@ -3,7 +3,7 @@
     <div class="carousel">
       <button class="arrow"> &lt; </button>
       <card v-for="card in cards"
-            v-bind:card="card.word"
+            v-bind:original="card.word"
             v-bind:key="card.id"></card>
       <button class="arrow"> &gt; </button>
     </div>
