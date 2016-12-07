@@ -2,14 +2,13 @@
   <section :class="resultClass">
     <div class="card">
       <h3 v-text="original"></h3>
-      <div>
+      <form @submit.prevent="checkTranslation()">
         <input type="text"
                placeholder="translation..."
                v-model.trim="translation"
-               @keyup.enter="checkTranslation"
                autofocus>
-        <button @click="checkTranslation" type="button">OK</button>
-      </div>
+        <button type="submit">OK</button>
+      </form>
       <span class="answer" v-text="answer"></span>
     </div>
   </section>

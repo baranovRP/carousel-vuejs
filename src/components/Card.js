@@ -2,7 +2,12 @@
 /* eslint-disable no-console */
 
 export default {
-  props: ['original'],
+  props: {
+    original: {
+      type: String,
+      default: '',
+    },
+  },
   data() {
     return {
       translation: '',
