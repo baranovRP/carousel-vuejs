@@ -1,13 +1,16 @@
 <template>
   <div id="app">
     <div class="carousel">
-      <button class="arrow"> &lt; </button>
-      <section class="cards">
-        <card v-for="card in cards"
-              v-bind:original="card.word"
-              v-bind:key="card.id"></card>
-      </section>
-      <button class="arrow"> &gt; </button>
+      <button class="arrow" @click="prev"> &lt; </button>
+      <div class="container">
+        <section class="cards">
+          <card v-for="(card, idx) in cards"
+                v-bind:original="card.word"
+                v-bind:idx="idx"
+                v-bind:key="card.id"></card>
+        </section>
+      </div>
+      <button class="arrow" @click="next"> &gt; </button>
     </div>
   </div>
 </template>
@@ -21,17 +24,21 @@
 }
 
 .carousel {
-  width: 600px;
+  width: 400px;
   display: flex;
   align-items: center;
 }
 
-.cards{
-  display: flex;
-  width: 400px;
+.container{
+  width: 200px;
   padding: 0;
   margin: auto;
   overflow: hidden;
+}
+
+.cards{
+  display: flex;
+  padding: 0;
 }
 
 .arrow {

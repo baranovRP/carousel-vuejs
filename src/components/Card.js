@@ -7,13 +7,21 @@ export default {
       type: String,
       default: '',
     },
+    idx: {
+      type: Number,
+      default: 0,
+    },
   },
   data() {
     return {
       translation: '',
       answer: '',
       resultClass: '',
+      hidden: true,
     };
+  },
+  mounted() {
+    if (this.idx === 0) this.hidden = false;
   },
   methods: {
     getData() {
