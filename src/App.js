@@ -24,14 +24,14 @@ export default {
   },
   methods: {
     next() {
-      // debugger;
-      if (this.currentIdx < this.cards.length) {
-        this.cards[this.currentIdx].hidden = true;
-        this.cards[this.currentIdx++].hidden = true;
+      if (this.currentIdx < this.cards.length - 1) {
+        this.currentIdx += 1;
       }
     },
     prev() {
-
+      if (this.currentIdx > 0) {
+        this.currentIdx -= 1;
+      }
     },
   },
 };

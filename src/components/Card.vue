@@ -1,5 +1,5 @@
 <template>
-  <section class="card-container" :class="resultClass" v-bind:hidden="hidden">
+  <section class="card-container" :class="resultClass">
     <div class="card">
       <h3 v-text="original"></h3>
       <form @submit.prevent="checkTranslation()">

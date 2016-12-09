@@ -5,6 +5,7 @@
       <div class="container">
         <section class="cards">
           <card v-for="(card, idx) in cards"
+                v-show="idx === currentIdx"
                 v-bind:original="card.word"
                 v-bind:idx="idx"
                 v-bind:key="card.id"></card>

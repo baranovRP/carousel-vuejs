@@ -17,11 +17,7 @@ export default {
       translation: '',
       answer: '',
       resultClass: '',
-      hidden: true,
     };
-  },
-  mounted() {
-    if (this.idx === 0) this.hidden = false;
   },
   methods: {
     getData() {
