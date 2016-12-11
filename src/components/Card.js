@@ -43,6 +43,7 @@ export default {
           if (item.phrase) {
             return word === item.phrase.text;
           }
+          return false;
         }))
         .then((result) => {
           if (result) {

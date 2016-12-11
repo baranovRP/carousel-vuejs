@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="carousel">
-      <button class="arrow" @click="prev"> &lt; </button>
+      <button class="arrow" @click="prev" v-bind:disabled="isPrevDisable"> &lt; </button>
       <div class="container">
         <section class="cards">
           <card v-for="(card, idx) in cards"
@@ -11,7 +11,7 @@
                 v-bind:key="card.id"></card>
         </section>
       </div>
-      <button class="arrow" @click="next"> &gt; </button>
+      <button class="arrow" @click="next" v-bind:disabled="isNextDisable"> &gt; </button>
     </div>
   </div>
 </template>
@@ -52,5 +52,10 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  background-color: lightblue;
+}
+
+.arrow:disabled{
+  background-color: lightgrey;
 }
 </style>
