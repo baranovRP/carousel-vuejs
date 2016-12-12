@@ -1,4 +1,4 @@
-import Card from './components/Card';
+import Card from './components/Card.vue';
 
 /* eslint-env browser */
 /* eslint-disable no-console */
@@ -29,6 +29,7 @@ export default {
       if (this.currentIdx < this.cards.length - 1) {
         this.isPrevDisable = false;
         this.currentIdx += 1;
+        if (this.currentIdx === this.cards.length - 1) this.isNextDisable = true;
         return;
       }
       this.isNextDisable = true;
@@ -37,6 +38,7 @@ export default {
       if (this.currentIdx > 0) {
         this.isNextDisable = false;
         this.currentIdx -= 1;
+        if (this.currentIdx === 0) this.isPrevDisable = true;
         return;
       }
       this.isPrevDisable = true;
