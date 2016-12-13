@@ -41,7 +41,7 @@ export default {
       this.getData().then(data =>
         data.tuc.some((item) => {
           if (item.phrase) {
-            return word === item.phrase.text;
+            return word.toLowerCase() === item.phrase.text.toLowerCase();
           }
           return false;
         }))
