@@ -1,5 +1,7 @@
 # carousel-vuejs
 
+try it (https://baranovrp.github.io/carousel-vuejs/)
+
 > A Vue.js project
 
 ## Build Setup
